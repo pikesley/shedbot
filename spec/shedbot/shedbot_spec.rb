@@ -5,7 +5,7 @@ module Shedbot
     it 'says hello' do
       get '/'
       expect(last_response).to be_ok
-      expect(last_response.body).to match /Hello from Shedbot/
+      expect(last_response.body).to match /Hello from Shed-Pi!/
     end
 
     it 'serves JSON' do

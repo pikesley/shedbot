@@ -10,5 +10,4 @@ unless ENV['RACK_ENV'] == 'production'
   Coveralls::RakeTask.new
 
   task :default => [:spec, 'jasmine:ci', 'coveralls:push']
-#  task :default => [:spec, 'coveralls:push']
 end
