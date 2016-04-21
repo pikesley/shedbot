@@ -47,6 +47,7 @@ module Shedbot
       end
 
       RELAYS.send(method, LOOKUPS[params['which']])
+      halt 200
     end
 
     # start the server if ruby file executed directly
