@@ -7,3 +7,19 @@
 # Shedbot
 
 RESTful API for the Internet of Sheds
+
+## cURL it
+
+Try something like
+
+    curl -X PATCH --data state=on http://192.168.1.125:9292/lights/strip
+
+    curl -X PATCH --data state=off http://192.168.1.125:9292/lights/spot
+
+and hear those relays click (I've not actually connected them to any real lights yet)
+
+## Next
+
+Because this is interacting with the Real World of Physical Things, we cannot assume that setting `state=on` _actually causes anything to happen_. This all needs to happen asynchronously (via a _Sheduler_, thanks @floppy) and then the actual status can be reported back on a different endpoint
+
+And it's important that this is all implemented correctly or the whole thing is rendered ludicrous
