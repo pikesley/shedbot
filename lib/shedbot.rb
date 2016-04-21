@@ -39,11 +39,11 @@ module Shedbot
 
     patch '/lights/:which' do
       if params['state'] == 'on'
-        method = :open
+        method = :close
       end
 
       if params['state'] == 'off'
-        method = :close
+        method = :open
       end
 
       RELAYS.send(method, LOOKUPS[params['which']])

@@ -17,5 +17,15 @@ module Shedbot
         }
       )
     end
+
+    it 'turns off a light' do
+      expect_any_instance_of(Relays).to receive(:open).with(1)
+      patch '/lights/strip', {state: 'off'}, JSON_HEADERS
+    end
+
+    it 'turns on a light' do
+      expect_any_instance_of(Relays).to receive(:close).with(2)
+      patch '/lights/spot', {state: 'on'}, JSON_HEADERS
+    end
   end
 end
