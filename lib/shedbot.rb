@@ -5,7 +5,7 @@ require 'pi_piper'
 
 require_relative 'shedbot/racks'
 require_relative 'shedbot/helpers'
-require_relative 'shedbot/relay'
+require_relative 'shedbot/relays'
 
 module Shedbot
   class App < Sinatra::Base

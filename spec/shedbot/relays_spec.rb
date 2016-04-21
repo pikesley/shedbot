@@ -1,5 +1,5 @@
 module Shedbot
-  describe Relay do
+  describe Relays do
     context 'open a relay' do
       before(:each) do
         expect(PiPiper::Pin).to receive(:new).with(pin: 6, direction: :out) do
@@ -10,7 +10,7 @@ module Shedbot
       end
 
       it 'opens relay 1' do
-        described_class.open(1)
+        described_class.new.open(1)
       end
     end
 
@@ -24,7 +24,7 @@ module Shedbot
       end
 
       it 'closes relay 2' do
-        described_class.close(2)
+        described_class.new.close(2)
       end
     end
   end
