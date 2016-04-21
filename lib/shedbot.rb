@@ -1,9 +1,11 @@
 require 'sinatra/base'
 require 'tilt/erubis'
 require 'json'
+require 'pi_piper'
 
 require_relative 'shedbot/racks'
 require_relative 'shedbot/helpers'
+require_relative 'shedbot/relay'
 
 module Shedbot
   class App < Sinatra::Base
