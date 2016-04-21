@@ -13,6 +13,12 @@ module Shedbot
       include Shedbot::Helpers
     end
 
+    RELAYS = Relays.new
+    LOOKUPS = {
+      'strip' => 1,
+      'spot' => 2
+    }
+
     get '/' do
       headers 'Vary' => 'Accept'
 
@@ -29,6 +35,18 @@ module Shedbot
           }.to_json
         end
       end
+    end
+
+    patch '/lights/:which' do
+      if params['state'] == 'on'
+        method = :open
+      end
+
+      if params['state'] == 'off'
+        method = :close
+      end
+
+      RELAYS.send(method, LOOKUPS[params['which']])
     end
 
     # start the server if ruby file executed directly
