@@ -1,7 +1,67 @@
+@import url(http://fonts.googleapis.com/css?family=Khand);
+
+body {
+  font-family: 'Khand', sans-serif;
+  background-image: url(//svg-bumbling.github.io//assets/images/backgrounds/carbon_fibre.png);
+  color: #fa8100;
+  text-transform: lowercase;
+}
+
 img {
   width: 100%;
 }
 
 h1 {
   text-align: center;
+}
+
+#controls {
+  text-align: center;
+  font-size: 2em;
+}
+
+.btn {
+  color: white;
+  margin: 20px;
+  font-size: 1em;
+}
+
+.btn-on {
+  background-color: green;
+}
+
+.btn-off {
+  background-color: red;
+}
+
+.well {
+  margin: 20px;
+  background-color: #000;
+  border: none;
+}
+
+.glowing {
+  -webkit-filter: drop-shadow(0px 0px 5px #fff);
+  filter: drop-shadow(0px 0px 5px #fff);
+}
+
+body { /* Margin bottom by footer height */ margin-bottom: 40px; }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: 10px;
+  background-color: #fa8100;
+  color: white;
+  height: 40px;
+  padding: 10px 16px;
+
+}
+.footer a {
+  color: white;
+}
+
+.footer a:hover {
+  text-decoration: none;
 }

@@ -1,0 +1,29 @@
+<h1>Light Control</h1>
+<div id='controls'>
+  <% LOOKUPS.keys.each do |light| %>
+    <div class='row well'>
+      <div class='col-xs-12'>
+        <%= light %>light
+      </div>
+      <% [
+        'on',
+        'off'
+      ].each do |state| %>
+        <div class='col-xs-6'>
+          <form enctype='application/json' class='form-inline' method='post' action='/lights/<%= light %>'>
+            <input name='state' value='<%= state %>' hidden>
+            <% additional_class = '' %>
+            <% if state == 'on' %>
+              <% additional_class = 'glowing' %>
+            <% end %>
+            <button class='btn btn-<%= state %>' type='submit'>
+              <span class='<%= additional_class %>'>
+                <i class='fa fa-lightbulb-o <%= additional_class %>'></i>
+              </span>
+            </button>
+          </form>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

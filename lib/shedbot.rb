@@ -20,13 +20,9 @@ module Shedbot
     }
 
     get '/' do
-      headers 'Vary' => 'Accept'
-
       respond_to do |wants|
         wants.html do
-          @content = '<h1>Hello from Shed-Pi!</h1>'
-          @title = 'Shedbot'
-          erb :index, layout: :default
+          redirect to '/lights'
         end
 
         wants.json do
@@ -37,7 +33,20 @@ module Shedbot
       end
     end
 
-    patch '/lights/:which' do
+    get '/lights' do
+      headers 'Vary' => 'Accept'
+
+      respond_to do |wants|
+        wants.html do
+          @content = '<h1>Hello from Shed-Pi!</h1>'
+          @title = 'Shedbot'
+          erb :lights, layout: :default
+        end
+      end
+    end
+
+    post '/lights/:which' do
+    #patch '/lights/:which' do
       if params['state'] == 'on'
         method = :close
       end
@@ -47,7 +56,7 @@ module Shedbot
       end
 
       RELAYS.send(method, LOOKUPS[params['which']])
-      halt 200
+      redirect to '/'
     end
 
     # start the server if ruby file executed directly

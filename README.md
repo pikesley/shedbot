@@ -6,7 +6,7 @@
 
 # Shedbot
 
-RESTful API for the Internet of Sheds
+RESTful API for the Internet of Sheds. You'll also want the [Arduino stuff](https://github.com/pikesley/relay-puller)
 
 ## cURL it
 
