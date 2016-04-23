@@ -9,6 +9,7 @@ module Shedbot
       @relays = {}
       LOOKUPS.each_pair do |k, v|
         @relays[k] = Relay.new v
+        @relays[k].close
       end
     end
 
