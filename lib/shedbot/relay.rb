@@ -2,7 +2,7 @@ module Shedbot
   class Relay
     def initialize pin_number
       @pin_number = pin_number
-      @state = :off
+      off
     end
 
     def pin
@@ -13,14 +13,14 @@ module Shedbot
       end
     end
 
-    def open
+    def on
       pin.on
-      @state = :off
+      @state = :on
     end
 
-    def close
+    def off
       pin.off
-      @state = :on
+      @state = :off
     end
 
     def state
@@ -30,6 +30,12 @@ module Shedbot
 end
 
 class FakePin
+  def off
+  end
+
+  def on
+  end
+  
   def method_missing m, *args
     puts "Received #{m.to_s} with #{args}"
   end

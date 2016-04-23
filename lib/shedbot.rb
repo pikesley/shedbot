@@ -50,17 +50,17 @@ module Shedbot
     post '/lights/:which' do
     #patch '/lights/:which' do
       if params['state'] == 'on'
-        method = :close
+        method = :on
       end
 
       if params['state'] == 'off'
-        method = :open
+        method = :off
       end
 
       begin
-        RELAYS.send(method, LOOKUPS[params['which']])
+        RELAYS.send(params['state'].to_sym, LOOKUPS[params['which']])
       rescue LoadError
-        puts "Sending '#{method}' to Relay #{LOOKUPS[params['which']]}"
+        puts "Sending '#{params['state']}' to Relay #{LOOKUPS[params['which']]}"
       end
 
       redirect to '/'
