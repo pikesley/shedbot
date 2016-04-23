@@ -55,7 +55,12 @@ module Shedbot
         method = :open
       end
 
-      RELAYS.send(method, LOOKUPS[params['which']])
+      begin
+        RELAYS.send(method, LOOKUPS[params['which']])
+      rescue LoadError
+        puts "Sending '#{method}' to Relay #{LOOKUPS[params['which']]}"
+      end
+
       redirect to '/'
     end
 
