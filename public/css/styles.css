@@ -65,3 +65,9 @@ body { /* Margin bottom by footer height */ margin-bottom: 40px; }
 .footer a:hover {
   text-decoration: none;
 }
+
+.bulb-on {
+  color: white;
+  -webkit-filter: drop-shadow(0px 0px 5px #fff);
+  filter: drop-shadow(0px 0px 5px #fff);
+}

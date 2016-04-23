@@ -15,12 +15,12 @@ module Shedbot
 
     def open
       pin.on
-      @state = :on
+      @state = :off
     end
 
     def close
       pin.off
-      @state = :off
+      @state = :on
     end
 
     def state
