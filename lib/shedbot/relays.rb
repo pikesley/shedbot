@@ -14,7 +14,7 @@ module Shedbot
     end
 
     def relays index
-      @relays[index.to_s]# ||= PiPiper::Pin.new(pin: LOOKUPS[index.to_s].to_i, direction: :out)
+      @relays[index.to_s]
     end
 
     def open index
