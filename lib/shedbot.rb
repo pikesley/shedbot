@@ -6,6 +6,7 @@ require 'pi_piper'
 require_relative 'shedbot/racks'
 require_relative 'shedbot/helpers'
 require_relative 'shedbot/relays'
+require_relative 'shedbot/relay'
 
 module Shedbot
   class App < Sinatra::Base
@@ -14,6 +15,7 @@ module Shedbot
     end
 
     RELAYS = Relays.new
+
     LOOKUPS = {
       'strip' => 1,
       'spot' => 2
