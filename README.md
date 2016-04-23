@@ -8,6 +8,8 @@
 
 RESTful API for the Internet of Sheds. You'll also want the [Arduino stuff](https://github.com/pikesley/relay-puller)
 
+![Screenshot](http://i.imgur.com/7oQZTg2.png)
+
 ## cURL it
 
 Try something like
@@ -16,7 +18,7 @@ Try something like
 
     curl -X PATCH --data state=off http://192.168.1.125:9292/lights/spot
 
-and hear those relays click (I've not actually connected them to any real lights yet)
+and hear those relays click
 
 ## Next
 
