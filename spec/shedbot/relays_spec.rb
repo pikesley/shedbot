@@ -4,14 +4,14 @@ module Shedbot
       before(:each) do
         expect(PiPiper::Pin).to receive(:new).with(pin: 6, direction: :out) do
           double = instance_double(PiPiper::Pin)
-          expect(double).to receive(:off).twice
-          expect(double).to receive(:on)
+          expect(double).to receive(:off)
+          expect(double).to receive(:on).twice
           double
         end
 
         expect(PiPiper::Pin).to receive(:new).with(pin: 13, direction: :out) do
           other_double = instance_double(PiPiper::Pin)
-          expect(other_double).to receive(:off).twice
+          expect(other_double).to receive(:on).twice
           other_double
         end
       end
@@ -25,13 +25,13 @@ module Shedbot
       before(:each) do
         expect(PiPiper::Pin).to receive(:new).with(pin: 13, direction: :out) do
           double = instance_double(PiPiper::Pin)
-          expect(double).to receive(:off).exactly(3).times
+          expect(double).to receive(:on).exactly(3).times
           double
         end
 
         expect(PiPiper::Pin).to receive(:new).with(pin: 6, direction: :out) do
           other_double = instance_double(PiPiper::Pin)
-          expect(other_double).to receive(:off).twice
+          expect(other_double).to receive(:on).twice
           other_double
         end
       end
