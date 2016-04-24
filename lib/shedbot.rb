@@ -49,13 +49,6 @@ module Shedbot
 
     post '/lights/:which' do
     #patch '/lights/:which' do
-      if params['state'] == 'on'
-        method = :on
-      end
-
-      if params['state'] == 'off'
-        method = :off
-      end
 
       begin
         RELAYS.send(params['state'].to_sym, LOOKUPS[params['which']])
