@@ -14,12 +14,12 @@ module Shedbot
     end
 
     def on
-      pin.on
+      pin.off
       @state = :on
     end
 
     def off
-      pin.off
+      pin.on
       @state = :off
     end
 
@@ -35,7 +35,7 @@ class FakePin
 
   def on
   end
-  
+
   def method_missing m, *args
     puts "Received #{m.to_s} with #{args}"
   end
