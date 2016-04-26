@@ -2,24 +2,29 @@
 <div id='controls'>
   <% RELAYS.each_pair do |name, relay| %>
     <div class='row well'>
-      <div class='col-xs-12 bulb-<%= relay.state.to_s %>' id='<%= name %>-state'>
+      <div class='col-xs-12' id='<%= name %>-state'>
         <%= name %> <i class='fa fa-lightbulb-o'></i>
       </div>
-      <% [
-        'on',
-        'off'
-      ].each do |state| %>
-        <div class='col-xs-6'>
-          <a href='javascript: submit("<%= name %>", "<%= state %>")' class='btn btn-<%= state %>'>
-            <%= state %>
-          </a>
-        </div>
-      <% end %>
+      <div class='col-xs-12'>
+        <a id='<%= name %>-control'>
+          <i class='fa' id='<%= name %>-toggle'></i>
+        </a>
+      </div>
     </div>
   <% end %>
 </div>
 
 <script>
+var relays = {
+  <% RELAYS.each_pair do |name, relay| %>
+    <%= name %>: '<%= relay.state %>',
+  <% end %>
+}
+
+$.each(relays, function(light, state) {
+  alter(light, state)
+})
+
 function submit(light, state) {
   $.ajax({
       url: '/lights/' + light,
@@ -28,8 +33,17 @@ function submit(light, state) {
       contentType: 'application/json'
   })
 
+  alter(light, inverse(state))
+}
+
+function alter(light, state) {
   $('#' + light + '-state').removeClass('bulb-' + inverse(state))
   $('#' + light + '-state').addClass('bulb-' + state)
+
+  $('#' + light + '-toggle').removeClass('fa-toggle-' + inverse(state))
+  $('#' + light + '-toggle').addClass('fa-toggle-' + state)
+
+  $('#' + light + '-control').attr('href', 'javascript: submit("' + light + '", "' + state + '")')
 }
 
 function inverse(state) {
