@@ -10,7 +10,7 @@ module Shedbot
       expect(relay.pin_number).to eq 13
     end
 
-    it 'switches off' do
+    it 'switches off a light' do
       expect(relay.pin).to receive(:on)
       relay.off
     end

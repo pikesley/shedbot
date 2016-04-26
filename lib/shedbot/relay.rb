@@ -16,9 +16,9 @@ module Shedbot
     def pin
       @pin ||= begin
         if @config.actual_pi
-          PiPiper::Pin.new pin: @pin_number, direction: :out
+          PiPiper::Pin.new pin: pin_number, direction: :out
         else
-          FakePin.new pin: @pin_number, direction: :out
+          FakePin.new pin: pin_number, direction: :out
         end
       end
     end

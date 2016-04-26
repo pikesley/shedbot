@@ -1,4 +1,4 @@
-actual_pi: false
+actual_pi: true
 
 relays:
   spotlight:
