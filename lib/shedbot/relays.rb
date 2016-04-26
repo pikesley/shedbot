@@ -4,12 +4,16 @@ module Shedbot
       @config = Config.new
       @relays = {}
       @config.relays.keys.each do |r|
-        @relays[r] = Relay.new r
+        @relays[r] = Relay.new(r)
       end
     end
 
     def [] key
       @relays[key]
+    end
+
+    def relays
+      @relays
     end
   end
 end

@@ -31,7 +31,6 @@ module Shedbot
 
       respond_to do |wants|
         wants.html do
-          @content = '<h1>Hello from Shed-Pi!</h1>'
           @title = 'Shedbot'
           erb :lights, layout: :default
         end

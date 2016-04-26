@@ -44,8 +44,10 @@ class FakePin
   end
 
   def off
+    puts "#{self.class} turned off"
   end
 
   def on
+    puts "#{self.class} turned off"
   end
 end
