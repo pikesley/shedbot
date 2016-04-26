@@ -2,22 +2,41 @@
 <div id='controls'>
   <% RELAYS.each_pair do |name, relay| %>
     <div class='row well'>
-      <div class='col-xs-12'>
-        <%= name %> <i class='fa fa-lightbulb-o bulb-<%= relay.state.to_s %>'></i>
+      <div class='col-xs-12 bulb-<%= relay.state.to_s %>' id='<%= name %>-state'>
+        <%= name %> <i class='fa fa-lightbulb-o'></i>
       </div>
       <% [
         'on',
         'off'
       ].each do |state| %>
         <div class='col-xs-6'>
-          <form enctype='application/json' class='form-inline' method='post' action='/lights/<%= name %>'>
-            <input name='state' value='<%= state %>' hidden>
-            <button class='btn btn-<%= state %>' type='submit'>
-              <%= state %>
-            </button>
-          </form>
+          <a href='javascript: submit("<%= name %>", "<%= state %>")' class='btn btn-<%= state %>'>
+            <%= state %>
+          </a>
         </div>
       <% end %>
     </div>
   <% end %>
 </div>
+
+<script>
+function submit(light, state) {
+  $.ajax({
+      url: '/lights/' + light,
+      data: { state: state },
+      type: 'PATCH',
+      contentType: 'application/json'
+  })
+
+  $('#' + light + '-state').removeClass('bulb-' + inverse(state))
+  $('#' + light + '-state').addClass('bulb-' + state)
+}
+
+function inverse(state) {
+  if (state == 'off') {
+    return 'on'
+  } else {
+    return 'off'
+  }
+}
+</script>

@@ -48,6 +48,6 @@ class FakePin
   end
 
   def on
-    puts "#{self.class} turned off"
+    puts "#{self.class} turned on"
   end
 end

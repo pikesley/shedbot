@@ -40,11 +40,6 @@ h1 {
   border: none;
 }
 
-.glowing {
-  -webkit-filter: drop-shadow(0px 0px 5px #fff);
-  filter: drop-shadow(0px 0px 5px #fff);
-}
-
 body { /* Margin bottom by footer height */ margin-bottom: 40px; }
 
 .footer {
@@ -68,6 +63,5 @@ body { /* Margin bottom by footer height */ margin-bottom: 40px; }
 
 .bulb-on {
   color: white;
-  -webkit-filter: drop-shadow(0px 0px 5px #fff);
-  filter: drop-shadow(0px 0px 5px #fff);
+  text-shadow: 0 0 8px white;
 }
