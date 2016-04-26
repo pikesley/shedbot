@@ -8,7 +8,7 @@
 
 RESTful API for the Internet of Sheds. You'll also want the [Arduino stuff](https://github.com/pikesley/relay-puller)
 
-![Screenshot](http://i.imgur.com/JkUffAj.png)
+![Screenshot](http://i.imgur.com/sZFuOSD.png)
 
 # Configuration
 
