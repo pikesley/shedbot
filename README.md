@@ -8,7 +8,7 @@
 
 RESTful API for the Internet of Sheds. You'll also want the [Arduino stuff](https://github.com/pikesley/relay-puller)
 
-![Screenshot](http://i.imgur.com/7oQZTg2.png)
+![Screenshot](http://i.imgur.com/JkUffAj.png)
 
 # Configuration
 
@@ -22,9 +22,13 @@ There is a _config/config.yml_ file (which should be overriden at _~/.shedbot/co
       striplight:
         pin: 6
 
-This identifies which light is associated with which pin. Also, crucially, it specifies if this is running on a real Raspberry Pi, where [PiPiper](https://github.com/jwhitehorn/pi_piper) will work properly - if this is set to _false_ then [fake pins](https://github.com/pikesley/shedbot/blob/96b6add4c5bf6dab20293243d32b64fdfab8337f/lib/shedbot/relay.rb#L43-L55) are used for testing 
+This identifies which light is associated with which pin. Also, crucially, it specifies if this is running on a real Raspberry Pi, where [PiPiper](https://github.com/jwhitehorn/pi_piper) will work properly - if this is set to _false_ then [fake pins](https://github.com/pikesley/shedbot/blob/96b6add4c5bf6dab20293243d32b64fdfab8337f/lib/shedbot/relay.rb#L43-L55) are used for testing
 
 # API
+
+This is so, so Alpha
+
+## Switching lights
 
     PATCH /lights/:light
 
@@ -34,7 +38,17 @@ with a JSON payload like
 
 will (attempt to) set the light identified by _:light_ to _on_
 
-## Next
+## Reading state
+
+    PATCH /lights/:light
+
+will return a JSON object describing the state of _:light_, thus:
+
+    {
+      spotlight: "on"
+    }
+
+# Next steps
 
 Because this is interacting with the Real World of Physical Things, we cannot assume that setting `state=on` _actually causes anything to happen_. This all needs to happen asynchronously (via a _Sheduler_, thanks [@floppy](https://github.com/floppy)) and then the actual status can be reported back on a different endpoint
 
