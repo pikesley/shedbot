@@ -38,7 +38,9 @@ module Shedbot
     end
 
     get '/lights/:which/?' do
-      redirect to '/lights'
+      {
+        params[:which] => RELAYS[params[:which]].state
+      }.to_json
     end
 
     patch '/lights/:which/?' do
