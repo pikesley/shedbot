@@ -7,15 +7,18 @@ module Shedbot
       expect(last_response.status).to equal 302
     end
 
+    it 'returns JSON' do
+
+    end
+
     it 'turns off a light' do
-      #  expect_any_instance_of(Relays).to receive(:off).with(1)
-      #expect_any_instance_of(FakePin).to receive(:off)
-      post '/lights/strip', {state: 'off'}, JSON_HEADERS
+      expect_any_instance_of(Relay).to receive(:off)
+      patch '/lights/striplight', {state: 'off'}, JSON_HEADERS
     end
 
     it 'turns on a light' do
-      #expect_any_instance_of(Relays).to receive(:on).with(2)
-      post '/lights/spot', {state: 'on'}, JSON_HEADERS
+      expect_any_instance_of(Relay).to receive(:on)
+      patch '/lights/spotlight', {state: 'on'}, JSON_HEADERS
     end
   end
 end
