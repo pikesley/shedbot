@@ -1,8 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Khand);
+@import url(http://fonts.googleapis.com/css?family=Glass+Antiqua);
 
 body {
-  font-family: 'Khand', sans-serif;
+  font-family: 'Glass Antiqua', sans-serif;
   background-image: url(//svg-bumbling.github.io//assets/images/backgrounds/carbon_fibre.png);
+  background-image: url(//www.cadhatch.com/download/i/mark_dl/u/4013003604/4618104039/Wood-2478.jpg);
   color: #fa8100;
   text-transform: lowercase;
 }
