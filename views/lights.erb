@@ -43,7 +43,7 @@ function alter(light, state) {
   $('#' + light + '-toggle').removeClass('fa-toggle-' + inverse(state))
   $('#' + light + '-toggle').addClass('fa-toggle-' + state)
 
-  $('#' + light + '-control').attr('href', 'javascript: submit("' + light + '", "' + state + '")')
+  $('#' + light + '-control').attr('href', 'javascript: submit("' + light + '", "' + inverse(state) + '")')
 }
 
 function inverse(state) {
