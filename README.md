@@ -10,15 +10,29 @@ RESTful API for the Internet of Sheds. You'll also want the [Arduino stuff](http
 
 ![Screenshot](http://i.imgur.com/7oQZTg2.png)
 
-## cURL it
+# Configuration
 
-Try something like
+There is a _config/config.yml_ file (which should be overriden at _~/.shedbot/config.yml_) which looks like
 
-    curl -X PATCH --data state=on http://192.168.1.125:9292/lights/strip
+    actual_pi: false
 
-    curl -X PATCH --data state=off http://192.168.1.125:9292/lights/spot
+    relays:
+      spotlight:
+        pin: 13
+      striplight:
+        pin: 6
 
-and hear those relays click
+This identifies which light is associated with which pin. Also, crucially, it specifies if this is running on a real Raspberry Pi, where [PiPiper](https://github.com/jwhitehorn/pi_piper) will work properly - if this is set to _false_ then [fake pins](https://github.com/pikesley/shedbot/blob/96b6add4c5bf6dab20293243d32b64fdfab8337f/lib/shedbot/relay.rb#L43-L55) are used for testing 
+
+# API
+
+    PATCH /lights/:light
+
+with a JSON payload like
+
+    {state: on}
+
+will (attempt to) set the light identified by _:light_ to _on_
 
 ## Next
 
