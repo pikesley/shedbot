@@ -3,9 +3,10 @@
 body {
   font-family: 'Glass Antiqua', sans-serif;
   background-image: url(//svg-bumbling.github.io//assets/images/backgrounds/carbon_fibre.png);
-  background-image: url(//www.cadhatch.com/download/i/mark_dl/u/4013003604/4618104039/Wood-2478.jpg);
+  background-image: url(//www.wildtextures.com/wp-content/uploads/wildtextures-green-wooden-fence.jpg);
   color: #fa8100;
   text-transform: lowercase;
+  text-shadow: 0 0 5px black;
 }
 
 img {
@@ -26,6 +27,7 @@ h1 {
   margin: 20px;
   font-size: 1em;
 }
+
 
 .btn-on {
   background-color: green;
@@ -73,4 +75,8 @@ body { /* Margin bottom by footer height */ margin-bottom: 40px; }
 .light-control:hover {
   color: #fa8100;
   font-size: 2em;
+}
+
+hr {
+  border-color: #fa8100;
 }

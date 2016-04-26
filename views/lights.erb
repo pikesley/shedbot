@@ -1,7 +1,9 @@
+<hr />
 <h1>Light Control</h1>
+<hr />
 <div id='controls'>
   <% RELAYS.each_pair do |name, relay| %>
-    <div class='row well'>
+    <div class='row'>
       <div class='col-xs-12' id='<%= name %>-state'>
         <%= name %> <i class='fa fa-lightbulb-o'></i>
       </div>
@@ -11,6 +13,7 @@
         </a>
       </div>
     </div>
+    <hr />
   <% end %>
 </div>
 

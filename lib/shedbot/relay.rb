@@ -42,13 +42,14 @@ end
 
 class FakePin
   def initialize pin:, direction:
+    @pin = pin
   end
 
   def off
-    puts "#{self.class} turned off"
+    puts "#{self.class} #{@pin} turned off"
   end
 
   def on
-    puts "#{self.class} turned on"
+    puts "#{self.class} #{@pin} turned on"
   end
 end
