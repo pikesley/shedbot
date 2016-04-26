@@ -1,12 +1,14 @@
 require 'sinatra/base'
 require 'tilt/erubis'
 require 'json'
+require 'yaml'
 require 'pi_piper'
 
 require_relative 'shedbot/racks'
 require_relative 'shedbot/helpers'
-require_relative 'shedbot/relays'
+require_relative 'shedbot/config'
 require_relative 'shedbot/relay'
+require_relative 'shedbot/relays'
 
 module Shedbot
   class App < Sinatra::Base
@@ -16,21 +18,10 @@ module Shedbot
 
     RELAYS = Relays.new
 
-    LOOKUPS = {
-      'strip' => 1,
-      'spot' => 2
-    }
-
     get '/' do
       respond_to do |wants|
         wants.html do
           redirect to '/lights'
-        end
-
-        wants.json do
-          {
-            app: 'Shedbot'
-          }.to_json
         end
       end
     end
@@ -49,13 +40,7 @@ module Shedbot
 
     post '/lights/:which' do
     #patch '/lights/:which' do
-
-      begin
-        RELAYS.send(params['state'].to_sym, LOOKUPS[params['which']])
-      rescue LoadError
-        puts "Sending '#{params['state']}' to Relay #{LOOKUPS[params['which']]}"
-      end
-
+      RELAYS[params[:which]].send(params[:state].to_sym)
       redirect to '/'
     end
 
