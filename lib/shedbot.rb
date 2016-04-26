@@ -45,7 +45,6 @@ module Shedbot
 
     patch '/lights/:which/?' do
       RELAYS[params[:which]].send(get_state request.body.read)
-#      redirect to '/lights'
     end
 
     # start the server if ruby file executed directly
