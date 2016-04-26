@@ -65,3 +65,11 @@ body { /* Margin bottom by footer height */ margin-bottom: 40px; }
   color: white;
   text-shadow: 0 0 8px white;
 }
+
+.light-control:link,
+.light-control:visited,
+.light-control:active,
+.light-control:hover {
+  color: #fa8100;
+  font-size: 2em;
+}
