@@ -39,17 +39,14 @@ function submit(light, state) {
 }
 
 function alter(light, state) {
-  $('#' + light + '-state').removeClass('bulb-' + invert(state))
-  $('#' + light + '-state').addClass('bulb-' + state)
-
-  $('#' + light + '-toggle').removeClass(icon(invert(state)))
-  $('#' + light + '-toggle').addClass(icon(state))
-
+  flip(light, '-state', state, 'bulb-')
+  flip(light, '-toggle', state, 'fa-toggle-')
   $('#' + light + '-control').attr('href', 'javascript: submit("' + light + '", "' + invert(state) + '")')
 }
 
-function icon(state) {
-  return 'fa-toggle-' + state
+function flip(light, postfix, state, prefix) {
+  $('#' + light + postfix).removeClass(prefix + invert(state))
+  $('#' + light + postfix).addClass(prefix + state)
 }
 
 function invert(state) {
