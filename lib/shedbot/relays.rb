@@ -1,19 +1,10 @@
 module Shedbot
-  class Relays
+  class Relays < Hash
     def initialize
       @config = Config.new
-      @relays = {}
       @config.relays.keys.each do |r|
-        @relays[r] = Relay.new(r)
+        self[r] = Relay.new(r)
       end
-    end
-
-    def [] key
-      @relays[key]
-    end
-
-    def relays
-      @relays
     end
   end
 end

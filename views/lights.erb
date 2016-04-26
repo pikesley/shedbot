@@ -1,6 +1,6 @@
 <h1>Light Control</h1>
 <div id='controls'>
-  <% RELAYS.relays.each_pair do |name, relay| %>
+  <% RELAYS.each_pair do |name, relay| %>
     <div class='row well'>
       <div class='col-xs-12'>
         <%= name %> <i class='fa fa-lightbulb-o bulb-<%= relay.state.to_s %>'></i>

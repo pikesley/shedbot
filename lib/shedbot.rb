@@ -26,7 +26,7 @@ module Shedbot
       end
     end
 
-    get '/lights' do
+    get '/lights/?' do
       headers 'Vary' => 'Accept'
 
       respond_to do |wants|
@@ -37,10 +37,14 @@ module Shedbot
       end
     end
 
+    get '/lights/:which' do
+      redirect to '/lights'
+    end
+
     post '/lights/:which' do
     #patch '/lights/:which' do
       RELAYS[params[:which]].send(params[:state].to_sym)
-      redirect to '/'
+      redirect to '/lights'
     end
 
     # start the server if ruby file executed directly
