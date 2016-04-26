@@ -3,6 +3,7 @@ module Shedbot
     def initialize light
       @config = Config.new
       @light = light
+      off
     end
 
     def pin_number

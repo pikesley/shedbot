@@ -3,7 +3,7 @@ module Shedbot
     def initialize
       @config = fetch_yaml "#{gem_dir}/config.yml"
 
-      if File.exists? "#{user_dir}/config.yaml"
+      if File.exists? "#{user_dir}/config.yml"
         @local = fetch_yaml "#{user_dir}/config.yml"
         @config.merge! @local
       end
