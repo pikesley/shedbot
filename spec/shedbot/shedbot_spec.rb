@@ -7,16 +7,6 @@ module Shedbot
       expect(last_response.status).to equal 302
     end
 
-    it 'serves JSON' do
-      get '/', nil, JSON_HEADERS
-      expect(last_response).to be_ok
-      expect(JSON.parse last_response.body).to eq (
-        {
-          'app' => 'Shedbot'
-        }
-      )
-    end
-
     it 'turns off a light' do
       #  expect_any_instance_of(Relays).to receive(:off).with(1)
       #expect_any_instance_of(FakePin).to receive(:off)

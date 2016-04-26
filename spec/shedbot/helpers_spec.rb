@@ -6,8 +6,8 @@ module Shedbot
   describe Helpers do
     let(:helpers) { TestHelper.new }
 
-    it 'says hello' do
-      expect(helpers.hello).to eq 'Hello'
+    it 'gets the state' do
+      expect(helpers.get_state 'state=off').to eq :off
     end
   end
 end
