@@ -82,7 +82,7 @@ body {
 .light-control:active,
 .light-control:hover {
   color: #fa8100;
-  font-size: 2em;
+  font-size: 1em;
 }
 
 hr {
