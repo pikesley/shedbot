@@ -16,7 +16,6 @@ module Shedbot
 
     def pin
       @pin ||= begin
-      #  if @config.actual_pi
         if RUBY_PLATFORM =~ /arm-linux/
           PiPiper::Pin.new pin: pin_number, direction: :out
         else

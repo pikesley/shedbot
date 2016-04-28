@@ -1,7 +1,7 @@
-#actual_pi: false
-
 relays:
   spotlight:
     pin: 13
   striplight:
     pin: 6
+  ledlight:
+    pin: 5
