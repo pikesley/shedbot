@@ -47,6 +47,12 @@ module Shedbot
       RELAYS[params[:which]].send(get_state request.body.read)
     end
 
+    not_found do
+      status 404
+      @content = 'Nothing to see here'
+      erb :oops, layout: :default
+    end
+
     # start the server if ruby file executed directly
     run! if app_file == $0
   end
