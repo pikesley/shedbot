@@ -46,10 +46,10 @@ class FakePin
   end
 
   def off
-    puts "#{self.class} #{@pin} turned off"
+    "#{self.class} #{@pin} turned off"
   end
 
   def on
-    puts "#{self.class} #{@pin} turned on"
+    "#{self.class} #{@pin} turned on"
   end
 end
