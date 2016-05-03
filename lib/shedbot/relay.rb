@@ -16,7 +16,7 @@ module Shedbot
 
     def pin
       @pin ||= begin
-        if RUBY_PLATFORM =~ /arm-linux/
+        if RUBY_PLATFORM =~ /arm.*-linux/
           PiPiper::Pin.new pin: pin_number, direction: :out
         else
           FakePin.new pin: pin_number, direction: :out
