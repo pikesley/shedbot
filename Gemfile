@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.5'
+ruby '2.3.1'
 
 gem 'sinatra'
 gem 'rack-conneg'
@@ -8,6 +8,8 @@ gem 'rack-google-analytics'
 gem 'rake'
 gem 'puma'
 gem 'pi_piper'
+gem 'compass'
+gem 'bootstrap-sass'
 
 group :test do
   gem 'rspec'
