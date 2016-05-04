@@ -19,7 +19,8 @@ body {
   }
 }
 
-$light-on: lighten($brand-primary, 50%);
+$light-on: lighten($brand-primary, 100%);
+
 .bulb-on {
   color: $light-on;
   text-shadow: 0 0 8px $light-on;
