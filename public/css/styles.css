@@ -8816,12 +8816,13 @@ body {
   color: white;
   height: 40px;
   padding: 10px 16px;
+  opacity: 0.5;
 }
-/* line 22, ../sass/_footer.scss */
+/* line 23, ../sass/_footer.scss */
 .footer a {
   color: white;
 }
-/* line 26, ../sass/_footer.scss */
+/* line 27, ../sass/_footer.scss */
 .footer a:hover {
   text-decoration: none;
 }
