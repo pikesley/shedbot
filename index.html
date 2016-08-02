@@ -2,6 +2,7 @@
   <head>
     <link rel="stylesheet" href="reveal.js/css/reveal.css">
     <link rel="stylesheet" href="reveal.js/css/theme/black.css">
+    <link rel="stylesheet" href="assets/css/shedbot.css">
   </head>
   <body>
     <div class="reveal">
@@ -28,7 +29,27 @@
             Lesson #2: Sometimes you need more grunt
           </h2>
         </section>
-        <section data-background='assets/images/arduino.jpg'></section>
+        <section data-background='assets/images/arduino.jpg'>
+          <pre class='fragment'>
+            <code data-trim data-noescape>
+    int relays[] = { 4, 5, 6, 7 };
+    int inputs[] = { 8, 9, 10, 11 };
+
+    void setup() {
+      for (int r = 0; r < count; r++) {
+        pinMode(relays[r], OUTPUT);
+        pinMode(inputs[r], INPUT);
+      }
+    }
+
+    void loop() {
+      for (int v = 0; v < count; v++) {
+        digitalWrite(relays[v], digitalRead(inputs[v]));
+      }
+    }
+            </code>
+          </pre>
+        </section>
 
       </div>
     </div>
