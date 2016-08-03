@@ -1,6 +1,6 @@
 >slide - spider
 
-Hello EMF Camp, my name is Sam, and this is a story about gardens, renewable energy and massively-overengineering things
+Hello EMF Camp, my name is Sam, and this is a story about gardens, renewable energy, and massively-overengineering things
 
 About two and a half years ago, I bought a house, with a garden. I'd never had a garden of my own before, but it turns out gardening is amazingly good fun, and in fact if you've spoken to me for more than about five minutes in the last two years, I've almost certainly bored you to death about my beautiful South-facing garden. The question of which way it faces will be important later on
 
@@ -96,7 +96,7 @@ or, depending on your perspective,
 
 >reveal fragment - waste people's time
 
-because it turns out the correct, RESTful solution for something like this is
+because it turns out the correct, RESTful solution for something like this, where we're changing the state of a resource, is
 
 >slide - patch
 
