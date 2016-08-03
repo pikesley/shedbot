@@ -1,8 +1,8 @@
 >slide - spider
 
-Hello, my name is Sam, and this is a story about gardens, renewable energy and massively-overengineering things
+Hello EMF Camp, my name is Sam, and this is a story about gardens, renewable energy and massively-overengineering things
 
-About two and a half years ago, I bought a house, with a garden. I'd never had a garden of my own before, but it turns out gardening is amazingly good fun, and in fact if you've spoken to me for more than about five minutes in the last two years, I've almost certainly bored you to death about my beautiful south-facing garden. The question of which way it faces will be important later on
+About two and a half years ago, I bought a house, with a garden. I'd never had a garden of my own before, but it turns out gardening is amazingly good fun, and in fact if you've spoken to me for more than about five minutes in the last two years, I've almost certainly bored you to death about my beautiful South-facing garden. The question of which way it faces will be important later on
 
 >slide - garden
 
@@ -24,7 +24,7 @@ The panel did not come with any fixings, just a bunch of holes in the underside 
 
 >slide - regulator
 
-So inside the shed, I connected the voltage regulator to the battery (which I don't have a picture of because it's down behind my potting bench) and then to the panel, and as it was a sunny day everything lit up straight away and I had started gathering Free Energy
+So inside the shed, I connected the voltage regulator to the battery (which I don't have a picture of because it's down behind my potting bench) and then to the panel, and as it was a sunny day and as I mentioned the whole thing points South, everything lit up straight away and I had started gathering Free Energy
 
 >slide - power point
 
@@ -44,7 +44,7 @@ But of course I've still got some spare 5-volt USB connections. What else do we 
 
 >slide - pi
 
-This is a Pi 3, with the built-in wifi. So I got Raspbian on there, got it on the network, and then I was able to get a shell on my shed, which was quite exciting. The next step was to see if I could switch the lights with the Pi
+This is a Pi 3, with the built-in wifi. So I got Raspbian on there, and eventually a modern Ruby, which has always proved way more of a pain in the bum than it needs to be on a Pi, got it on the network, and then I was able to get a shell on my shed, which was actually quite exciting. The next step was to see if I could switch the lights with the Pi
 
 >slide - relay
 
@@ -133,3 +133,5 @@ As mentioned previously, I should really make this happen asynchronously, but th
 Thinking more widely about what to do with all this free energy, I'm pretty sure I should be able to recharge the batteries for my cordless drill but I don't really know where to begin with that
 
 >slide - questions?
+
+If you want to know anything more about gardening, particularly growing tomatoes, find me in the bar later
