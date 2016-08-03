@@ -1,22 +1,23 @@
 <html>
   <head>
     <link rel="stylesheet" href="reveal.js/css/reveal.css">
-    <link rel="stylesheet" href="reveal.js/css/theme/black.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/league.css">
     <link rel="stylesheet" href="assets/css/shedbot.css">
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
         <section data-background='assets/images/relay-spider.jpg'>
-          <h1>Building the Internet of Sheds</h1>
-          <h2>Sam Pikesley</h2>
-          <h3><a href='https://twitter.com/pikesley'>@pikesley</a></h3>
+          <h1>My Shed Has An API</h1>
+          <h2>Lessons from a ridiculous project</h2>
+          <h3>Sam Pikesley</h3>
+          <h4><a href='https://twitter.com/pikesley'>@pikesley</a></h4>
         </section>
         <section data-background='assets/images/garden.jpg'></section>
         <section data-background='assets/images/shed.jpg'></section>
         <section data-background='assets/images/panel.jpg'>
-          <h2 class='fragment'>
-            Lesson #1: Have a friend who wants to offload a solar panel
+          <h2 class='fragment fade-left'>
+            Lesson #0: Have a mate who wants to get shot of a solar panel
           </h2>
         </section>
         <section data-background='assets/images/regulator.jpg'></section>
@@ -25,13 +26,14 @@
         <section data-background='assets/images/light.jpg'></section>
         <section data-background='assets/images/pi.jpg'></section>
         <section data-background='assets/images/relay.jpg'>
-          <h2 class='fragment'>
-            Lesson #2: Sometimes you need more grunt
+          <h2 class='fragment fade-left'>
+            Lesson #1: Sometimes you need more grunt
           </h2>
         </section>
         <section data-background='assets/images/arduino.jpg'>
-          <pre class='fragment'>
-            <code data-trim data-noescape>
+          <div class='fragment fade-left'>
+            <pre>
+              <code data-trim data-noescape>
     int relays[] = { 4, 5, 6, 7 };
     int inputs[] = { 8, 9, 10, 11 };
 
@@ -47,10 +49,67 @@
         digitalWrite(relays[v], digitalRead(inputs[v]));
       }
     }
+              </code>
+            </pre>
+            <a href='https://github.com/pikesley/relay-puller'>https://github.com/pikesley/relay-puller</a>
+          </div>
+        </section>
+        <section data-background='assets/images/arduino.jpg'>
+          <h2>
+            Lesson #2: Arduino programming is easier than you think
+          </h2>
+        </section>
+        <section data-background='assets/images/pi.jpg'>
+          <h2 class='fragment fade-left'>
+            Lesson #3: The Raspberry Pi pin layout is an unspeakable shambles
+          </h2>
+          <h3 class='fragment fade-left'>
+            <a href='http://pinout.xyz'>http://pinout.xyz</a>
+          </h2>
+        </section>
+        <section data-background='assets/images/house.jpg'>
+          <pre class='fragment fade-left'>
+            <code>
+    /lights/:light
             </code>
           </pre>
         </section>
+        <section data-background='assets/images/house.jpg'>
+          <pre>
+            <code>
+    GET /lights/:light/on
+    GET /lights/:light/off
+            </code>
+          </pre>
+        </section>
+        <section data-background='assets/images/house.jpg'>
+          <h2>
+            Lesson #4: Waste people's time
+          </h2>
+        </section>
+        <section data-background='assets/images/house.jpg'>
+          <pre>
+            <code>
+    PATCH /lights/:light
 
+    {
+      state: on
+    }
+            </code>
+          </pre>
+        </section>
+        <section data-background='assets/images/house.jpg'>
+          <pre>
+            <code>
+    $.ajax({
+      url: '/lights/' + light,
+      data: { state: state },
+      type: 'PATCH',
+      contentType: 'application/json'
+    })
+            </code>
+          </pre>
+        </section>
       </div>
     </div>
   <script src="reveal.js/js/reveal.js"></script>
