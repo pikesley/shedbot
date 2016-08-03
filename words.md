@@ -102,7 +102,7 @@ PATCH is a thing that's used under the hood in Rails, but I'd never implemented 
 
 This is still not _entirely_ correct - because this is interacting with Real Things in the Real World, I think this should all be done asynchronously, via a _sheduler_, and then there should be another endpoint which reports the actual state of the light. In practice, however, this works just fine as it is
 
-So what does this all look like in practice? 
+So what does this all look like in practice? Well, if you point your web browser at the Pi, there's a screen like this
 
 
 
