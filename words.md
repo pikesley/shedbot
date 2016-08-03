@@ -1,6 +1,6 @@
 >slide - spider
 
-This is a story about gardens, renewable energy and massively-overengineering things
+Hello, my name is Sam, and this is a story about gardens, renewable energy and massively-overengineering things
 
 About two and a half years ago, I bought a house, with a garden. I'd never had a garden of my own before, but it turns out gardening is amazingly good fun, and in fact if you've spoken to me for more than about five minutes in the last two years, I've almost certainly bored you to death about my beautiful south-facing garden. The question of which way it faces will be important later on
 
@@ -91,13 +91,16 @@ But then I came up against the issue of which HTTP method to use. My first thoug
 a GET, but after extensive discussions with my colleague James and my boss Jeni _who used to sit on the WWW Technical Architecture Group_, this was rejected, as was my second idea of POSTing some JSON. So the next lesson is
 
 >slide - ask some experts
+
+or, depending on your perspective,
+
 >reveal fragment - waste people's time
 
 because it turns out the correct, RESTful solution for something like this is
 
 >slide - patch
 
-and if we're not going to do this correctly then the whole thing is rendered ridiculous. PATCH is a thing that's used under the hood in Rails, but I'd never implemented it before, and I'm not sure anybody else uses it much either: where the common verbs like GET and POST are natively supported in jQuery, for PATCH I had to construct my own Ajax call for my front-end application
+and if we're not going to do this correctly then the whole thing is rendered preposterous. PATCH is a thing that's used under the hood in Rails, but I'd never implemented it before, and I'm not sure anybody else uses it much either: where the common verbs like GET and POST are natively supported in jQuery, for PATCH I had to construct my own Ajax call for my front-end application
 
 >slide - code
 
