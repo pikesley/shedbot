@@ -78,7 +78,7 @@ The physical pin numbers bear not the slightest relation to the logical pin numb
 
 the fine people at pinout.xyz, I'd have been at a loss
 
->slide - garden
+>slide - API
 
 So, what about an API? I broke out my favourite Ruby web framework, Sinatra, and put together a very simple API. The main endpoint is
 
@@ -93,7 +93,7 @@ a GET, but after extensive discussions with my colleague James and my boss Jeni 
 >slide - ask some experts
 >reveal fragment - waste people's time
 
-because it turns out the correct solution for something like this is
+because it turns out the correct, RESTful solution for something like this is
 
 >slide - patch
 

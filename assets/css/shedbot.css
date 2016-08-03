@@ -13,3 +13,7 @@ li {
 p {
   text-align: center;
 }
+
+.reveal h1 {
+  font-size: 3em;
+}
