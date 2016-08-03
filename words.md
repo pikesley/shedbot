@@ -2,7 +2,7 @@
 
 This is a story about gardens, renewable energy and massively-overengineering things
 
-About two and a half years ago, I bought a house, with a garden. I'd never had a garden of my own before, but it turns out gardening is amazingly good fun. It's a south-facing garden: this will be important later on
+About two and a half years ago, I bought a house, with a garden. I'd never had a garden of my own before, but it turns out gardening is amazingly good fun, and in fact if you've spoken to me for more than about five minutes in the last two years, I've almost certainly bored you to death about my beautiful south-facing garden. The question of which way it faces will be important later on
 
 >slide - garden
 
@@ -18,9 +18,9 @@ This is my shed. We put this up in the spring of 2014 and it contains a lawnmowe
 
 Yes, I mounted a solar panel up there. This particular panel has some history with EMF Camp: at the first EMF in 2012, my friends Chris and Steve brought this panel along and used it to [get Chris to fill this in]. Since then it's been languishing at Steve's old flat, so when he offered it to sell it, the voltage regulator and a great big mobile-home battery for a very reasonable price, I snapped it up. And so the first lesson is
 
->reveal fragment - Have a friend who wants to offload a solar panel
+>slide - Have a friend who wants to get shot of a solar panel
 
-The panel did not come with any fixings, just a bunch of holes in the underside of the frame. So as you can see, I lashed something together with a few metal straps, some cut-up plastic pipe and some roofing bolts
+The panel did not come with any fixings, just a bunch of holes in the underside of the frame. So as you can see, I lashed something together with a few metal straps, some cut-up plastic pipe and some roofing bolts, and I sealed all the holes with silicone sealant and Sugru
 
 >slide - regulator
 
@@ -40,7 +40,7 @@ So, what to do with all this Free Energy, apart from my solar-powered Geoffrey B
 
 So I got hold of some cheapo 12-volt lights off eBay, and hooked them up to the power outlets, and there was light
 
-But of course I've still got some spare 5-volt USB connections, though. What else do we know of that runs off of 5-volts USB? Yes, of course, a Raspberry Pi
+But of course I've still got some spare 5-volt USB connections. What else do we know of that runs off of 5-volts USB? Yes, of course, a Raspberry Pi
 
 >slide - pi
 
@@ -50,7 +50,7 @@ This is a Pi 3, with the built-in wifi. So I got Raspbian on there, got it on th
 
 So I bought this 12-volt relay and connected the lights (by cutting the positive wire and connecting that across the switch) and then I found out that it requires a 5-volt signal to switch it - the Pi's pins will only give 3.3 volts. And so we come to the next lesson:
 
->reveal fragment - Sometimes you need more grunt
+>slide - Sometimes you need more grunt
 
 Anyway, this gave me an excuse to play around with
 
@@ -58,7 +58,7 @@ Anyway, this gave me an excuse to play around with
 
 I've never done any Arduino stuff before and I've gotta be honest, I was a little bit intimidated. However it turns out that's it surprisingly easy, at least for this very simple case
 
->reveal fragment - Code
+>slide - Code
 
 This code is dead, dead simple: we define four input pins and four output pins, then inside the loop we simply map the state of each input pin to the corresponding output pin. So when Input Pin 1 goes high, Output Pin 1 goes high, which throws Relay Switch 1, which makes a very satisfying 'clunk' noise and switches a light on. So the next lesson is
 
@@ -70,19 +70,19 @@ So what about the Raspberry Pi end of this?
 
 There is a Ruby Gem called `pi_piper` for controlling the IO pins, and aside from requiring root privileges it's very easy to use. However
 
->reveal fragment - The Raspberry Pi pin layout is an unspeakable shambles
+>slide - The Raspberry Pi pin layout is an unspeakable shambles
 
 The physical pin numbers bear not the slightest relation to the logical pin numbers. There are presumably good reasons for this, but without the Treasure Map provided by
 
 >reveal fragment - pinout.xyz
 
-the fine people at pinout.xyz, I'd have been lost.
+the fine people at pinout.xyz, I'd have been at a loss
 
 >slide - garden
 
 So, what about an API? I broke out my favourite Ruby web framework, Sinatra, and put together a very simple API. The main endpoint is
 
->reveal fragment - API
+>slide - API
 
 But then I came up against the issue of which HTTP method to use. My first thought was do something like
 
@@ -90,15 +90,16 @@ But then I came up against the issue of which HTTP method to use. My first thoug
 
 a GET, but after extensive discussions with my colleague James and my boss Jeni _who used to sit on the WWW Technical Architecture Group_, this was rejected, as was my second idea of POSTing some JSON. So the next lesson is
 
->slide - garden
+>slide - ask some experts
+>reveal fragment - waste people's time
 
 because it turns out the correct solution for something like this is
 
->slide - garden
+>slide - patch
 
-and if we're not going to do this correctly then the whole thing is rendered rediculous. PATCH is a thing that's used under the hood in Rails, but I'd never implemented it before, and I'm not sure anybody else uses it much either: where the common verbs like GET and POST are natively supported in jQuery, for PATCH I had to construct my own Ajax call for my front-end application
+and if we're not going to do this correctly then the whole thing is rendered ridiculous. PATCH is a thing that's used under the hood in Rails, but I'd never implemented it before, and I'm not sure anybody else uses it much either: where the common verbs like GET and POST are natively supported in jQuery, for PATCH I had to construct my own Ajax call for my front-end application
 
->slide - garden
+>slide - code
 
 This is still not _entirely_ correct - because this is interacting with Real Things in the Real World, I think this should all be done asynchronously, via a _sheduler_, and then there should be another endpoint which reports the actual state of the light. In practice, however, this works just fine as it is
 
@@ -128,11 +129,4 @@ As mentioned previously, I should really make this happen asynchronously, but th
 
 Thinking more widely about what to do with all this free energy, I'm pretty sure I should be able to recharge the batteries for my cordless drill but I don't really know where to begin with that
 
-
-
-# Links
-
-* Both Github repos
-* pi_piper
-* http://pinout.xyz/
-* pikesley.org
+>slide - questions?
