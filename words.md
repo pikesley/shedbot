@@ -100,7 +100,7 @@ because it turns out the correct, RESTful solution for something like this, wher
 
 >slide - patch
 
-and if we're not going to do this correctly then the whole thing is rendered preposterous. PATCH is a thing that's used under the hood in Rails, but I'd never implemented it before, and I'm not sure anybody else uses it much either: where the common verbs like GET and POST are natively supported in jQuery, for PATCH I had to construct my own Ajax call for my front-end application
+and if we're not going to do this correctly then the whole thing is rendered ridiculous. PATCH is a thing that's used under the hood in Rails, but I'd never implemented it before, and I'm not sure anybody else uses it much either: where the common verbs like GET and POST are natively supported in jQuery, for PATCH I had to construct my own Ajax call for my front-end application
 
 >slide - code
 
