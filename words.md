@@ -114,7 +114,11 @@ We can send a GET, of course
 
 >slide - GET
 
-Except, what are we really getting back here? We're actually asking the server for the light itself, and it sends back a 200 indicating that it's returned what we asked for. But of course it hasn't, it's sent back a representation of the state of the light _and it can't even be sure about that_. It should maybe send back a 303, SEE OTHER, with a URI for the light. Except of course this is a light screwed to my shed, which DOESN'T HAVE A URI. This rabbit-hole is the HTTP-RANGE-14 problem, which I don't have time to go into now but will be happy to fight about in the bar if you find me later on
+Except, what are we really getting back here? We're actually asking the server for the light itself, and it sends back a 200 indicating that it's returned what we asked for. But of course it hasn't, it's sent back a representation of the state of the light _and it can't even be sure about that_. It should maybe send back a 303, SEE OTHER, with a URI for the light. Except of course this is a light screwed to my shed, which DOESN'T HAVE A URI
+
+>reveal fragment - http range 14
+
+This rabbit-hole is the HTTP-RANGE-14 problem, which I don't have time to go into now but will be happy to have opinions on in the bar if you find me later
 
 So what does this all look like in practice? Well, if you're on my home network and you point your web browser at the Pi, there's a screen like this
 
