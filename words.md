@@ -1,6 +1,6 @@
 >slide - spider
 
-Hello EMF Camp, my name is Sam, and this is a story about gardens, renewable energy, and massively-overengineering things
+Hello EMF Camp, my name is Sam, and this is a story about gardens, renewable energy, and HTTP
 
 About two and a half years ago, I bought a house, with a garden. I'd never had a garden of my own before, but it turns out gardening is amazingly good fun, and in fact if you've spoken to me for more than about five minutes in the last two years, I've almost certainly bored you to death about my beautiful South-facing garden. The question of which way it faces will be important later on
 
@@ -16,9 +16,9 @@ This is my shed. We put this up in the spring of 2014 and it contains a lawnmowe
 
 >slide - panel
 
-Yes, I mounted a solar panel up there. This particular panel has some history with EMF Camp: at the first EMF in 2012, my friends Chris and Steve brought this panel along and used it to [get Chris to fill this in]. Since then it's been languishing at Steve's old flat, so when he offered it to sell it, the voltage regulator and a great big mobile-home battery for a very reasonable price, I snapped it up. And so the first lesson is
+Yes, I mounted a solar panel up there. This panel belonged to my mate Steve, but it's been languishing at his old flat for ages, so when he offered it to sell it, the voltage regulator and a great big mobile-home battery for a very reasonable price, I snapped it up. And so the first lesson is
 
->slide - Have a friend who wants to get shot of a solar panel
+>slide - Have a mate who wants to get shot of a solar panel
 
 The panel did not come with any fixings, just a bunch of holes in the underside of the frame. So as you can see, I lashed something together with a few metal straps, some cut-up plastic pipe and some roofing bolts, and I sealed all the holes with silicone sealant and Sugru
 
@@ -32,7 +32,7 @@ Steve had also thrown in a couple of these power outlets with the panel, which h
 
 >slide - radio
 
-the radio. If this seems like a tremendous feat of over-engineering just so I can listen to the cricket while I'm gardening, strap yourselves in because w're just getting started
+the radio. If this seems like a tremendous feat of over-engineering just so I can listen to the cricket while I'm gardening, strap yourselves in because we're just getting started
 
 So, what to do with all this Free Energy, apart from my solar-powered Geoffrey Boycott? Well, I thought it might be nice to run some lights down there
 
@@ -44,7 +44,7 @@ But of course I've still got some spare 5-volt USB connections. What else do we 
 
 >slide - pi
 
-This is a Pi 3, with the built-in wifi. So I got Raspbian on there, and eventually a modern Ruby, which has always proved way more of a pain in the bum than it needs to be on a Pi, got it on the network, and then I was able to get a shell on my shed, which was actually quite exciting. The next step was to see if I could switch the lights with the Pi
+This is a Pi 3, with the built-in wifi. So I got Raspbian on there, and eventually a modern Ruby, which has always proved way more of a pain in the bum than it needs to be on a Pi, got it on the network, and then I was able to get a shell on my shed, and how cool is that? The next step was to see if I could switch the lights with the Pi
 
 >slide - relay
 
@@ -84,27 +84,37 @@ So, what about an API? I broke out my favourite Ruby web framework, Sinatra, and
 
 >slide - API
 
-But then I came up against the issue of which HTTP method to use. My first thought was do something like
+But then I came up against the issue of which HTTP verb to use. My first, naive thought was do something like
 
->slide - API
+>slide - GET
 
-a GET, but after extensive discussions with my colleague James and my boss Jeni _who used to sit on the WWW Technical Architecture Group_, this was rejected, as was my second idea of POSTing some JSON. So the next lesson is
+a GET, but no, a GET is for reading the state of a resource. So maybe a POST then?
 
->slide - ask some experts
+>slide - POST
 
-or, depending on your perspective,
+No, that's for creating a resource. Oh wait, maybe a PUT is the thing?
+
+>slide - PUT
+
+But that's for updating a resource. No, after extensive discussions with my colleague James and my boss Jeni _who used to sit on the WWW Technical Architecture Group_, we decided that the correct approach, where we're changing the state of part of a resource, is PATCH
+
+>slide - PATCH
+
+and if we're not going to do this correctly then the whole thing is rendered ridiculous. So the lesson here is
+
+>slide - Learn to love your HTTP verbs
+
+and also
 
 >reveal fragment - waste people's time
 
-because it turns out the correct, RESTful solution for something like this, where we're changing the state of a resource, is
-
->slide - patch
-
-and if we're not going to do this correctly then the whole thing is rendered ridiculous. PATCH is a thing that's used under the hood in Rails, but I'd never implemented it before, and I'm not sure anybody else uses it much either: where the common verbs like GET and POST are natively supported in jQuery, for PATCH I had to construct my own Ajax call for my front-end application
-
->slide - code
-
 This is still not _entirely_ correct - because this is interacting with Real Things in the Real World, I think this should all be done asynchronously, via a _sheduler_, and then there should be another endpoint which reports the actual state of the light. In practice, however, this works just fine as it is
+
+We can send a GET, of course
+
+>slide - GET
+
+Except, what are we really getting back here? We're actually asking the server for the light itself, and it sends back a 200 indicating that it's returned what we asked for. But of course it hasn't, it's sent back a representation of the state of the light _and it can't even be sure about that_. It should maybe send back a 303, SEE OTHER, with a URI for the light. Except of course this is a light screwed to my shed, which DOESN'T HAVE A URI. This rabbit-hole is the HTTP-RANGE-14 problem, which I don't have time to go into now but will be happy to fight about in the bar if you find me later on
 
 So what does this all look like in practice? Well, if you're on my home network and you point your web browser at the Pi, there's a screen like this
 

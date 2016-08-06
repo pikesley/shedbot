@@ -1,5 +1,11 @@
 pre {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.reveal code {
+  font-size: 1.2em;
+  color: green;
+  font-weight: bold;
 }
 
 a {

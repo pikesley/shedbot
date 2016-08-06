@@ -2,7 +2,8 @@
   <head>
     <link rel='stylesheet' href='reveal.js/css/reveal.css'>
     <link rel='stylesheet' href='reveal.js/css/theme/league.css'>
-'    <link rel='stylesheet' href='assets/css/shedbot.css'>
+    <link rel="stylesheet" href="reveal.js/css/zenburn.css">
+    <link rel='stylesheet' href='assets/css/shedbot.css'>
   </head>
   <body>
     <div class='reveal'>
@@ -102,12 +103,26 @@
           </pre>
         </section>
         <section data-background='assets/images/house.jpg'>
-          <h1>
-            Lesson #4: Ask some experts
-          </h1>
-          <h2 class='fragment fade-left'>
-            (or, waste people's time)
-          </h2>
+          <pre>
+            <code>
+    POST /lights/:light
+
+    {
+      state: on
+    }
+            </code>
+          </pre>
+        </section>
+        <section data-background='assets/images/house.jpg'>
+          <pre>
+            <code>
+    PUT /lights/:light
+
+    {
+      state: on
+    }
+            </code>
+          </pre>
         </section>
         <section data-background='assets/images/house.jpg'>
           <pre>
@@ -121,14 +136,21 @@
           </pre>
         </section>
         <section data-background='assets/images/house.jpg'>
+          <h1>
+            Lesson #4: Learn to love your HTTP verbs
+          </h1>
+          <h2 class='fragment fade-left'>
+            (also, waste people's time)
+          </h2>
+        </section>
+        <section data-background='assets/images/house.jpg'>
           <pre>
             <code>
-    $.ajax({
-      url: '/lights/' + light,
-      data: { state: state },
-      type: 'PATCH',
-      contentType: 'application/json'
-    })
+    GET /lights/inside
+
+    {
+      inside: on
+    }
             </code>
           </pre>
         </section>
