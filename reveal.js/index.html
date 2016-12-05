@@ -352,34 +352,35 @@ Thinking more widely about what to do with all this free energy, I bought an inv
           <p>
             <a href='https://twitter.com/pikesley'>@pikesley</a>
           </p>
+					<aside class='notes' data-markdown>
+I am happy to answer any question except 'why'?
+          </aside>
         </section>
       </div>
     </div>
-    <script src="lib/js/head.min.js">
-    </script>
-    <script src="js/reveal.js">
-    </script>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
     <script>
-           // More info https://github.com/hakimel/reveal.js#configuration
-           Reveal.initialize({
-             history: true,
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
 
-             // More info https://github.com/hakimel/reveal.js#dependencies
-             dependencies: [{
-               src: 'plugin/markdown/marked.js'
-             }, {
-               src: 'plugin/markdown/markdown.js'
-             }, {
-               src: 'plugin/notes/notes.js',
-               async: true
-             }, {
-               src: 'plugin/highlight/highlight.js',
-               async: true,
-               callback: function() {
-                 hljs.initHighlightingOnLoad();
-               }
-             }]
-           });
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [{
+          src: 'plugin/markdown/marked.js'
+        }, {
+          src: 'plugin/markdown/markdown.js'
+        }, {
+          src: 'plugin/notes/notes.js',
+          async: true
+        }, {
+          src: 'plugin/highlight/highlight.js',
+          async: true,
+          callback: function() {
+            hljs.initHighlightingOnLoad()
+          }
+        }]
+      })
     </script>
   </body>
 </html>
