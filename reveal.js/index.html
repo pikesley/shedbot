@@ -113,17 +113,17 @@ I've never done any Arduino stuff before and I've gotta be honest, I was a littl
         <section data-background='images/arduino.jpg'>
           <pre>
             <code class='c++'>
-		int relays[] = { 4, 5, 6, 7 };
-		int inputs[] = { 8, 9, 10, 11 };
+		int relays[] = {  4,  5,  6,  7 };
+		int inputs[] = {  8,  9, 10, 11 };
 		int count = 4;
 		void setup() {
-		  for (int r = 0; r < count; r++) {
+		  for (int r = 0; r &lt; count; r++) {
 		    pinMode(relays[r], OUTPUT);
 		    pinMode(inputs[r], INPUT);
 		  }
 		}
 		void loop() {
-		  for (int v = 0; v < count; v++) {
+		  for (int v = 0; v &lt; count; v++) {
 		    digitalWrite(relays[v],
 		    digitalRead(inputs[v]));
 		  }
@@ -279,7 +279,8 @@ So what does this all look like in practice? Well, if you're on my home network 
           </aside>
         </section>
         <section data-background='images/complete.jpg'>
-          <img src='images/screenshot.png'> <a href=
+          <img src='images/screenshot.png' alt='screenshot'>
+					<a href=
           'https://github.com/pikesley/shedbot'>https://github.com/pikesley/shedbot</a>
           <aside class='notes' data-markdown>
 And you can click those switches and turn the lights on and off, which is awesome. HOWEVER there is a massive flaw in all of this: if I don't have my phone with me, then short of pulling wires out I HAVE NO WAY OF CONTROLLING THE LIGHTS. So possibly the most important lesson is

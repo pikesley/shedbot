@@ -1,3 +1,10 @@
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal li {
+  text-shadow: 0px 0px 4px black;
+}
+
 .reveal pre {
   border: none;
   box-shadow: none;
@@ -16,8 +23,8 @@
   font-weight: bold;
   margin: 5px;
   padding: 5px;
-  tab-size: 2em;
-  word-spacing: 1em;
+  tab-size: 2ex;
+  word-spacing: 1ex;
   background: rgba(0, 0, 0, 0.8);
 }
 
