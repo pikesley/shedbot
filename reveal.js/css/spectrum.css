@@ -1,0 +1,325 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "spectrum";
+  src:url("fonts/spectrum.eot");
+  src:url("fonts/spectrum.eot?#iefix") format("embedded-opentype"),
+    url("fonts/spectrum.woff") format("woff"),
+    url("fonts/spectrum.ttf") format("truetype"),
+    url("fonts/spectrum.svg#spectrum") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "spectrum" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="spec-"]:before,
+[class*=" spec-"]:before {
+  font-family: "spectrum" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.spec-underscore:before {
+  content: "\5f";
+}
+.spec-semi-colon:before {
+  content: "\3b";
+}
+.spec-bang:before {
+  content: "\21";
+}
+.spec-question-mark:before {
+  content: "\3f";
+}
+.spec-apostrophe:before {
+  content: "\27";
+}
+.spec-quote:before {
+  content: "\22";
+}
+.spec-left-bracket:before {
+  content: "\28";
+}
+.spec-right-bracket:before {
+  content: "\29";
+}
+.spec-left-square-bracket:before {
+  content: "\5b";
+}
+.spec-right-square-bracket:before {
+  content: "\5d";
+}
+.spec-left-curly-bracket:before {
+  content: "\7b";
+}
+.spec-at:before {
+  content: "\40";
+}
+.spec-asterisk:before {
+  content: "\2a";
+}
+.spec-colon:before {
+  content: "\3a";
+}
+.spec-comma:before {
+  content: "\2c";
+}
+.spec-ampersand:before {
+  content: "\26";
+}
+.spec-hash:before {
+  content: "\23";
+}
+.spec-percent:before {
+  content: "\25";
+}
+.spec-up-arrow:before {
+  content: "\5e";
+}
+.spec-copyright:before {
+  content: "\a9";
+}
+.spec-plus:before {
+  content: "\2b";
+}
+.spec-less-than:before {
+  content: "\3c";
+}
+.spec-equals:before {
+  content: "\3d";
+}
+.spec-greater-than:before {
+  content: "\3e";
+}
+.spec-pipe:before {
+  content: "\7c";
+}
+.spec-tilde:before {
+  content: "\7e";
+}
+.spec-dollar:before {
+  content: "\24";
+}
+.spec-pound:before {
+  content: "\a3";
+}
+.spec-minus:before {
+  content: "\2d";
+}
+.spec-0:before {
+  content: "\30";
+}
+.spec-1:before {
+  content: "\31";
+}
+.spec-2:before {
+  content: "\32";
+}
+.spec-3:before {
+  content: "\33";
+}
+.spec-4:before {
+  content: "\34";
+}
+.spec-5:before {
+  content: "\35";
+}
+.spec-6:before {
+  content: "\36";
+}
+.spec-7:before {
+  content: "\37";
+}
+.spec-8:before {
+  content: "\38";
+}
+.spec-9:before {
+  content: "\39";
+}
+.spec-a:before {
+  content: "\61";
+}
+.spec-b:before {
+  content: "\62";
+}
+.spec-c:before {
+  content: "\63";
+}
+.spec-d:before {
+  content: "\64";
+}
+.spec-e:before {
+  content: "\65";
+}
+.spec-f:before {
+  content: "\66";
+}
+.spec-g:before {
+  content: "\67";
+}
+.spec-h:before {
+  content: "\68";
+}
+.spec-i:before {
+  content: "\69";
+}
+.spec-j:before {
+  content: "\6a";
+}
+.spec-k:before {
+  content: "\6b";
+}
+.spec-l:before {
+  content: "\6c";
+}
+.spec-m:before {
+  content: "\6d";
+}
+.spec-n:before {
+  content: "\6e";
+}
+.spec-o:before {
+  content: "\6f";
+}
+.spec-p:before {
+  content: "\70";
+}
+.spec-q:before {
+  content: "\71";
+}
+.spec-r:before {
+  content: "\72";
+}
+.spec-s:before {
+  content: "\73";
+}
+.spec-t:before {
+  content: "\74";
+}
+.spec-u:before {
+  content: "\75";
+}
+.spec-w:before {
+  content: "\77";
+}
+.spec-x:before {
+  content: "\78";
+}
+.spec-y:before {
+  content: "\79";
+}
+.spec-z:before {
+  content: "\7a";
+}
+.spec-big-c:before {
+  content: "\43";
+}
+.spec-big-d:before {
+  content: "\44";
+}
+.spec-big-e:before {
+  content: "\45";
+}
+.spec-big-f:before {
+  content: "\46";
+}
+.spec-big-g:before {
+  content: "\47";
+}
+.spec-big-h:before {
+  content: "\48";
+}
+.spec-big-i:before {
+  content: "\49";
+}
+.spec-big-j:before {
+  content: "\4a";
+}
+.spec-big-k:before {
+  content: "\4b";
+}
+.spec-right-curly-bracket:before {
+  content: "\7d";
+}
+.spec-backslash:before {
+  content: "\5c";
+}
+.spec-big-m:before {
+  content: "\4d";
+}
+.spec-big-n:before {
+  content: "\4e";
+}
+.spec-big-o:before {
+  content: "\4f";
+}
+.spec-big-p:before {
+  content: "\50";
+}
+.spec-big-q:before {
+  content: "\51";
+}
+.spec-big-r:before {
+  content: "\52";
+}
+.spec-big-s:before {
+  content: "\53";
+}
+.spec-slash:before {
+  content: "\2f";
+}
+.spec-big-t:before {
+  content: "\54";
+}
+.spec-v:before {
+  content: "\76";
+}
+.spec-big-b:before {
+  content: "\42";
+}
+.spec-big-a:before {
+  content: "\41";
+}
+.spec-big-u:before {
+  content: "\55";
+}
+.spec-big-v:before {
+  content: "\56";
+}
+.spec-big-w:before {
+  content: "\57";
+}
+.spec-big-x:before {
+  content: "\58";
+}
+.spec-big-y:before {
+  content: "\59";
+}
+.spec-big-z:before {
+  content: "\5a";
+}
+.spec-dot:before {
+  content: "\2e";
+}
+.spec-big-l:before {
+  content: "\4c";
+}
