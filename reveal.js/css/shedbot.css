@@ -1,0 +1,35 @@
+@import '//file.myfontastic.com/qbT833H9AjE28yfY8Bp9qi/icons.css';
+
+pre {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.reveal code {
+  font-family: 'spectrum';
+  font-size: 0.9em;
+  color: green;
+  font-weight: bold;
+  margin: 5px;
+  tab-size: 2em;
+  word-spacing: 1em;
+}
+
+a {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  text-align: center;
+}
+
+.reveal h1 {
+  font-size: 3em;
+}
+
+.speaker-controls-notes .value {
+  font-size: 0.5em !important;
+}
