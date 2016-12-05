@@ -1,7 +1,14 @@
 @import '//file.myfontastic.com/qbT833H9AjE28yfY8Bp9qi/icons.css';
 
-pre {
-  background: rgba(0, 0, 0, 0.8);
+.reveal pre {
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  width: 90%;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .reveal code {
@@ -10,8 +17,10 @@ pre {
   color: green;
   font-weight: bold;
   margin: 5px;
+  padding: 5px;
   tab-size: 2em;
   word-spacing: 1em;
+  background: rgba(0, 0, 0, 0.8);
 }
 
 a {
