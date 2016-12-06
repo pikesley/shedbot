@@ -3,12 +3,12 @@ module Shedbot
     subject (:relays) { described_class.new }
 
     it 'has relays' do
-      expect(relays['spotlight']).to be_a Relay
+      expect(relays['inside']).to be_a Relay
     end
 
     it 'turns off a relay' do
-      expect(subject['striplight'].pin).to receive :on
-      subject['striplight'].off
+      expect(subject['outside'].pin).to receive :on
+      subject['outside'].off
     end
   end
 end

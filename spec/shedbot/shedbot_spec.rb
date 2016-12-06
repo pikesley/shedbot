@@ -9,30 +9,30 @@ module Shedbot
 
     context 'return JSON' do
       it 'knows a light is off' do
-        patch '/lights/spotlight', {state: 'off'}, JSON_HEADERS
-        get '/lights/spotlight'
+        patch '/lights/inside', {state: 'off'}, JSON_HEADERS
+        get '/lights/inside'
         expect(JSON.parse last_response.body).to eq ({
-          'spotlight' => 'off'
+          'inside' => 'off'
         })
       end
 
       it 'knows a light is on' do
-        patch '/lights/striplight', {state: 'on'}, JSON_HEADERS
-        get '/lights/striplight'
+        patch '/lights/outside', {state: 'on'}, JSON_HEADERS
+        get '/lights/outside'
         expect(JSON.parse last_response.body).to eq ({
-          'striplight' => 'on'
+          'outside' => 'on'
         })
       end
     end
 
     it 'turns off a light' do
       expect_any_instance_of(Relay).to receive(:off)
-      patch '/lights/striplight', {state: 'off'}, JSON_HEADERS
+      patch '/lights/outside', {state: 'off'}, JSON_HEADERS
     end
 
     it 'turns on a light' do
       expect_any_instance_of(Relay).to receive(:on)
-      patch '/lights/spotlight', {state: 'on'}, JSON_HEADERS
+      patch '/lights/inside', {state: 'on'}, JSON_HEADERS
     end
   end
 end

@@ -1,7 +1,5 @@
 relays:
-  spotlight:
+  inside:
     pin: 13
-  striplight:
+  outside:
     pin: 6
-  ledlight:
-    pin: 5

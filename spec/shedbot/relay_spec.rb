@@ -1,9 +1,9 @@
 module Shedbot
   describe Relay do
-    subject (:relay) { described_class.new 'spotlight' }
+    subject (:relay) { described_class.new 'inside' }
 
     it 'has a name' do
-      expect(relay.name).to eq 'spotlight'
+      expect(relay.name).to eq 'inside'
     end
 
     it 'has a pin number' do
