@@ -1,4 +1,2 @@
-coverage/
-log/
-.sass-cache
 _site
+skip
