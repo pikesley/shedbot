@@ -45,7 +45,7 @@ Now it turns out that gardening requires a lot of equipment, and unless you want
         </section>
         <section data-background='images/shed.jpg'>
           <aside class='notes' data-markdown>
-This is my shed. We put this up in the spring of 2014 and it contains a lawnmower and a chainsaw and all the usual sort of shed stuff. However the observant viewer may notice something on the roof
+This is my shed. We put this up in the spring of 2014 and it contains a lawnmower and a chainsaw and all the usual sort of shed stuff. However the observant viewer may notice something on the roof, aside from the blue Ikea tray
           </aside>
         </section>
         <section data-background='images/panel.jpg'>
@@ -107,7 +107,9 @@ Anyway, this gave me an excuse to play around with
         </section>
         <section data-background='images/arduino.jpg'>
           <aside class='notes' data-markdown>
-I've never done any Arduino stuff before and I've gotta be honest, I was a little bit intimidated. However it turns out that's it surprisingly easy, at least for this very simple case
+An Arduino
+
+I've never done any Arduino stuff before and I've gotta be honest, I was a little bit intimidated. However it turns out that's it surprisingly easy, at least for this very simple case, although I did have to dust-off some long-neglected C skills
           </aside>
         </section>
         <section data-background='images/arduino.jpg'>
@@ -133,7 +135,7 @@ I've never done any Arduino stuff before and I've gotta be honest, I was a littl
 					<a href=
 'https://github.com/pikesley/relay-puller'>https://github.com/pikesley/relay-puller</a>
           <aside class='notes' data-markdown>
-This code is dead, dead simple: we define four input pins and four output pins, then inside the loop we simply map the state of each input pin to the corresponding output pin. So when Input Pin 1 goes high, Output Pin 1 goes high, which throws Relay Switch 1, which makes a very satisfying 'clunk' noise and switches a light on. So the next lesson is
+This code is dead, dead simple: we define four input pins and four output pins, then inside the loop we simply map the state of each input pin to the corresponding output pin. So when Input Pin 4 goes high, Output Pin 8 goes high, which throws Relay Switch 1, which makes a very satisfying 'clunk' noise and switches a light on. So the next lesson is
           </aside>
         </section>
         <section data-background='images/arduino.jpg'>
@@ -162,6 +164,8 @@ The physical pin numbers bear not the slightest relation to the logical pin numb
 `click`
 
 the fine people at pinout.xyz, I'd have been at a loss
+
+If you're doing any Pi hardware stuff at all, I cannot recommend this site enough
           </aside>
         </section>
         <section data-background='images/house.jpg'>
@@ -169,7 +173,7 @@ the fine people at pinout.xyz, I'd have been at a loss
             RESTful API
           </h1>
           <aside class='notes' data-markdown>
-So, what about an API?
+So, what about an API? Because everything gets an API eventually
 
 I broke out my favourite Ruby web framework, Sinatra, and put together a very simple API. The main endpoint is
           </aside>
@@ -273,7 +277,7 @@ Except, what are we really getting back here? We're actually asking the server f
 
 `click`
 
-This rabbit-hole is the HTTP-RANGE-14 problem, which I don't have time to go into now but will be happy to have opinions on afterwards if you come and find me.
+This rabbit-hole is the HTTP-RANGE-14 problem, which I don't have time to go into now but will be happy to have opinions on afterwards if you come and find me
 
 So what does this all look like in practice? Well, if you're on my home network and you point your web browser at the Pi, there's a screen like this
           </aside>
@@ -353,7 +357,7 @@ Thinking more widely about what to do with all this free energy, I bought an inv
             <a href='https://twitter.com/pikesley'>@pikesley</a>
           </p>
 					<aside class='notes' data-markdown>
-You can find out about some of my other ludicrous side-projects at pikesley.org, and you can follow me on Twitter to find out what preposterous things I'm working on next
+You can find out more about this and some of my other ludicrous side-projects at pikesley.org, and you can follow me on Twitter to find out what preposterous things I'm working on next
 
 I am happy to answer any questions except for 'why did I do this?' and 'why am I dressed like an Egyptologist?'
           </aside>
