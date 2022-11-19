@@ -8,7 +8,7 @@
 
 RESTful API for the Internet of Sheds. You'll also want the [Arduino stuff](https://github.com/pikesley/relay-puller)
 
-![Screenshot](http://i.imgur.com/UF0jOr5.png)
+![Screenshot](https://i.imgur.com/UF0jOr5.png)
 
 # Running it
 
@@ -71,4 +71,4 @@ And it's important that this is all implemented correctly or the whole thing is 
 
 I have spoken about this nonsense in public: at [EMF Camp 2016](http://sam.pikesley.org/projects/shedbot/video), and at an [ODI Friday Lecture](https://www.youtube.com/watch?v=g6vUe-ACaZ8&feature=youtu.be&t=13m4s). The latest iteration of the slides is [here](http://sam.pikesley.org/projects/shedbot/presentation)
 
-![Computers](http://i.imgur.com/HxKmjss.jpg)		
+![Computers](https://i.imgur.com/HxKmjss.jpg)
